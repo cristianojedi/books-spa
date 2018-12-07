@@ -1,0 +1,45 @@
+<h2>Books List</h2>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="pull-left">
+      <a class="btn btn-primary" id="newBook" [routerLink]="['/books-insert']">
+        <span title="New Book" class="glyphicon glyphicon-plus-sign"></span> New Book
+      </a>
+    </div>
+  </div>
+</div>
+<br />
+<div class="page-size">
+  <div class="panel panel-default">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>ISBN</th>
+          <th>Author</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let book of books'>
+          <td>{{ book.id }}</td>
+          <td>{{ book.name }}</td>
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.author_name }}</td>
+          <td>{{ book.category_name }}</td>
+          <a title="Update" class="btn btn-warning" [routerLink]="['/books-update', book.id]">
+            <span class="glyphicon glyphicon-pencil"></span> Update
+          </a>
+          &nbsp;
+          <a (click)="delete(book)" href="javascript:void(0)" title="Delete" class="btn btn-danger">
+            <span class="glyphicon glyphicon-trash"></span> Delete
+          </a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h2>Categories List</h2>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="pull-left">
+      <a class="btn btn-primary" id="newCategory" [routerLink]="['/categories-insert']">
+        <span title="New Category" class="glyphicon glyphicon-plus-sign"></span> New Category
+      </a>
+    </div>
+  </div>
+</div>
+<br />
+<div class="page-size">
+  <div class="panel panel-default">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let category of categories'>
+          <td>{{ category.id }}</td>
+          <td>{{ category.name }}</td>
+          <a title="Update" class="btn btn-warning" [routerLink]="['/categories-update', category.id]">
+            <span class="glyphicon glyphicon-pencil"></span> Update
+          </a>
+          &nbsp;
+          <a (click)="delete(category)" href="javascript:void(0)" title="Delete" class="btn btn-danger">
+            <span class="glyphicon glyphicon-trash"></span> Delete
+          </a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

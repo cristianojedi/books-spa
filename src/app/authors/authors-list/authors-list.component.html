@@ -1,0 +1,40 @@
+<h2>Authors List</h2>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="pull-left">
+      <a class="btn btn-primary" id="newAuthor" [routerLink]="['/authors-insert']">
+        <span title="New Author" class="glyphicon glyphicon-plus-sign"></span> New Author
+      </a>
+    </div>
+  </div>
+</div>
+<br />
+<div class="page-size">
+  <div class="panel panel-default">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let author of authors'>
+          <td>{{ author.id }}</td>
+          <td>{{ author.name }}</td>
+          <a title="Update" class="btn btn-warning" [routerLink]="['/authors-update', author.id]">
+            <span class="glyphicon glyphicon-pencil"></span> Update
+          </a>
+          &nbsp;
+          <a (click)="delete(author)" href="javascript:void(0)" title="Delete" class="btn btn-danger">
+            <span class="glyphicon glyphicon-trash"></span> Delete
+          </a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

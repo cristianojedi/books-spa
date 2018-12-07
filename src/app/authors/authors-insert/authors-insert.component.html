@@ -1,0 +1,24 @@
+<h4>Add Author</h4>
+
+<form novalidate (ngSubmit)="insert()" [formGroup]="insertAuthorForm">
+  <div class="form-horizontal">
+
+    <!-- <div class="alert alert-danger">
+
+    </div> -->
+
+    <div class="form-group">
+      <label class="col-md-2 control-label">Name</label>
+      <div class="col-md-10">
+        <input class="form-control" id="name" type="text" placeholder="Name (requerid)" formControlName="name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <button class="btn btn-success" id="btnInsert" type="submit">Salvar</button>
+      </div>
+    </div>
+
+  </div>
+</form>
